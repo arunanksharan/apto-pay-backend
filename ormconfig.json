@@ -1,0 +1,15 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 15433,
+  "username": "arunanksharan",
+  "password": "POSTGRESISA123%awesome",
+  "database": "aptos",
+  "entities": ["dist/**/*.entity.js"],
+  "synchronize": false,
+  "migrationsTableName": "migration",
+  "migrations": ["dist/migrations/*.js"],
+  "cli": {
+    "migrationsDir": "src/migrations"
+  }
+}
