@@ -1,6 +1,7 @@
 import { UuidTimestampEntity } from 'common/entities/uuidTimestamp.entity';
 import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
 import { User } from 'users/entities/user.entity';
+import { Webhook } from 'webhook/entities/webhook.entity';
 
 @Entity('individual_profile')
 export class IndividualProfile extends UuidTimestampEntity {
@@ -44,6 +45,12 @@ export class IndividualProfile extends UuidTimestampEntity {
     },
   )
   wallet_addresses: UserWalletAddress[];
+
+  @OneToMany(() => Webhook, (webhook) => webhook.individual_profile, {
+    nullable: true,
+    cascade: true,
+  })
+  webhooks: Webhook[];
 }
 
 @Entity('user_wallet_address')
