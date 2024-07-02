@@ -5,6 +5,7 @@ import {
   Organization,
   OrganizationUser,
 } from 'organizations/entities/organization.entity';
+import { Payment } from 'payments/entities/payment.entity';
 
 @Entity()
 export class User extends UuidTimestampEntity {

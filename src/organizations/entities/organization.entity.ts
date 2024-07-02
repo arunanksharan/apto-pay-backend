@@ -4,20 +4,20 @@ import { User } from 'users/entities/user.entity';
 
 @Entity()
 export class Organization extends UuidTimestampEntity {
-  @Column()
+  @Column({ nullable: true, type: 'varchar', length: 512 })
   name: string;
 
-  @Column()
+  @Column({ nullable: true, type: 'varchar', length: 1024 })
   website: string;
 
-  @Column()
+  @Column({ nullable: true, type: 'varchar', length: 1024 })
   profile_image: string;
 
   // Todo: move this to user and auth with OTP
-  @Column()
+  @Column({ nullable: true, type: 'varchar', length: 64 })
   isd_code: string;
 
-  @Column()
+  @Column({ nullable: true, type: 'varchar', length: 128 })
   phone_number: string;
 
   @ManyToMany(() => User, (user) => user.organizations)
